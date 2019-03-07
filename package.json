@@ -18,6 +18,7 @@
     "npm": "^6.9.0",
     "razzle-dev-utils": "^2.4.1",
     "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
     "std-env": "^2.2.1",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.2.3",

@@ -24,6 +24,11 @@ module.exports = function base(env, options) {
 					}
 				},
 				{
+					test: /\.js$/,
+					use: ['source-map-loader'],
+					enforce: 'pre'
+				},
+				{
 					test: /\.css$/,
 					use: cssOptions
 				},
