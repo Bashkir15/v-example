@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"exclude": ["node_modules"],
+		"include": ["src/**/*"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"rootDir": "src",
+		"typeRoots": ["node_modules/@types", "src/custom-types"]
+	}
+}
