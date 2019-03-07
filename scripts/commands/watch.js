@@ -1,0 +1,38 @@
+const webpack = require('webpack')
+const getOptions = require('../getOptions')
+const { createConfig, createCompiler } = require('../webpack')
+
+process.noDeprecation = true
+
+module.exports = function watch() {
+	// Delete assets
+	const options = getOptions()
+	const clientConfig = createConfig({ ...options, client: true })
+	const serverConfig = createConfig({ ...options, server: true })
+
+	const clientCompiler = createCompiler(clientConfig)
+	const serverCompiler = createCompiler(serverConfig)
+
+	let isWatching
+
+	clientCompiler.plugin('done', () => {
+		if (isWatching) {
+			return
+		}
+
+		isWatching = serverCompiler.watch({
+			quiet: true,
+			stats: 'none'
+		}, stats => {})
+	})
+
+	const devServer = new DevServer(clientCompiler, clientConfig.devServer)
+	devServer.listen(options.port || 3001, err => {
+		if (err) {
+			console.error(err)
+		}
+	})
+}
+
+
+
