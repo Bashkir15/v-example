@@ -1,5 +1,8 @@
 const webpack = require('webpack')
 const path = require('path')
+const nodeExternals = require('webpack-node-externals')
+const StartServerPlugin = require('start-server-webpack-plugin')
+
 const base = require('./base')
 
 module.exports = function server(options) {
