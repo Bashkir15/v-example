@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const DevServer = require('webpack-dev-server-speedy')
 const getOptions = require('../getOptions')
 const { createConfig, createCompiler } = require('../webpack')
 

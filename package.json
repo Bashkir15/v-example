@@ -27,6 +27,7 @@
     "tslint": "^5.13.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.3333",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "webpack-dev-server-speedy": "^3.1.1"
   }
 }
