@@ -4,7 +4,10 @@ const resolveWith = relative => path.resolve(root, relative)
 const env = require('std-env')
 
 const paths = {
-	// This will be your paths for your app
+	clientEntry: resolveWith('src/index.ts'),
+	serverEntry: resolveWith('server/server.ts'),
+	clientOutput: resolveWith('build/client'),
+	serverOutput: resolveWith('build/server')
 }
 
 // Get these from process.argv.slice()

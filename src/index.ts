@@ -1,5 +1,3 @@
-<reference path="./index.d.ts"/>
-
 const App = () => `
 	<div>
 		<p>App</p>

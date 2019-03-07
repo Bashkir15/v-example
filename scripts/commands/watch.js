@@ -5,7 +5,7 @@ const { createConfig, createCompiler } = require('../webpack')
 
 process.noDeprecation = true
 
-module.exports = function watch() {
+function watch() {
 	// Delete assets
 	const options = getOptions()
 	const clientConfig = createConfig({ ...options, client: true })
@@ -34,6 +34,8 @@ module.exports = function watch() {
 		}
 	})
 }
+
+watch()
 
 
 

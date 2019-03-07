@@ -1,4 +1,4 @@
-const createConfig = require('./config/createConfig')
+const createConfig = require('./configs/createConfig')
 const createCompiler = require('./createCompiler')
 
 module.exports = {
