@@ -1,4 +1,4 @@
-const watch = require('./commands/watch')
+const watch = require('./newCommands/watch')
 
 module.exports = {
 	watch

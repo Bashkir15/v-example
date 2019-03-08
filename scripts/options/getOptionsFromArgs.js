@@ -1,6 +1,9 @@
 module.exports = function getOptionsFromArgs(args) {
-	return args.reduce((acc, curr) => ({
-		...acc,
-		[curr]: true
-	}), {})
+	if (args.length && args.length > 0) {
+		return args.reduce((acc, curr) => ({
+			...acc,
+			[curr]: true
+		}), {})
+	}
+	return {}
 }

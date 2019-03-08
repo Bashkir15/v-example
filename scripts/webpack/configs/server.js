@@ -33,7 +33,7 @@ module.exports = function server(options) {
 		filename: 'server.js',
 		libraryTarget: 'commonjs2',
 		path: paths.serverOutput,
-		publicPath: paths.clientPublicPath
+		publicPath: env.dev ? 'http://localhost:3001/' : '/'
 	}
 
 	config.plugins = [

@@ -29,6 +29,10 @@ module.exports = function base(env, options) {
 					enforce: 'pre'
 				},
 				{
+					test: /\.hbs$/,
+					loader: 'handlebars-loader'
+				},
+				{
 					test: /\.css$/,
 					use: cssOptions
 				},

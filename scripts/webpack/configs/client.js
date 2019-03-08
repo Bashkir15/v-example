@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const HtmlPlugin = require('html-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const ExtractPlugin = require('mini-css-extract-plugin')
 
@@ -13,7 +14,17 @@ module.exports = function client(options) {
 	// If you want to do type-script checking with ts-loader instead
 	// you'll need to include the FormTsCheckerWebpackPlugin
 
+	config.plugins = [
+		...config.plugins,
+		new HtmlPlugin({
+			template: options.paths.template,
+			filename: 'index.hbs',
+			inject: true
+		})
+	]
+
 	if (env.dev) {
+
 		config.entry = [
 			require.resolve('razzle-dev-utils/webpackHotDevClient'),
 			paths.clientEntry
@@ -24,7 +35,7 @@ module.exports = function client(options) {
 			libraryTarget: 'var',
 			pathinfo: true,
 			path: paths.clientBuild,
-			publicPath: paths.clientPublicPath
+			publicPath: 'http://localhost:3001/'
 		}
 
 		config.devServer = {
@@ -41,6 +52,7 @@ module.exports = function client(options) {
 			hot: true,
 			noInfo: true,
 			port: 3001,
+			publicPath: 'http://localhost:3001/',
 			quiet: true,
 			watchOptions: {
 				ignored: /node_modules/
@@ -65,7 +77,7 @@ module.exports = function client(options) {
 		filename: '[chunkhash].js',
 		libraryTarget: 'var',
 		path: paths.clientBuild,
-		publicPath: paths.clientPublicPath
+		publicPath: '/'
 	}
 
 	config.plugins = [

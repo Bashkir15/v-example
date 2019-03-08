@@ -1,12 +1,4 @@
-const App = () => `
-	<div>
-		<p>App</p>
-	</div>
-`
+import { Greet } from './greet';
 
-function renderApp() {
-	const root = document.getElementById('root') as HTMLElement
-	root.innerHTML = App()
-}
-
-renderApp()
+const greet = new Greet('v');
+greet.greet();
